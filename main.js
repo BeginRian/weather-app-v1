@@ -7,7 +7,7 @@ const weatherimage = document.querySelector('.weather_icon');
 const temperature = document.querySelector('.temperature')
 
 async function checkWeather(city){
-    const APIKey = '5cebb00a75a2e8ed36b5477b2ca62adc';
+    const APIKey = /*'API KEY'*/;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
     const data = await fetch(`${url}`).then(response => response.json());
@@ -37,45 +37,3 @@ async function checkWeather(city){
 search.addEventListener('click', ()=>{
     checkWeather(input .value);
 });
-
-/*
-
-    const APIKey = '5cebb00a75a2e8ed36b5477b2ca62adc';
-    const kota = document.querySelector('.search input').value;
-
-    if(city == '')
-        return;
-
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q${city}&appid=${APIKey}`).then(response => response.json()).then(json => {
-
-
-        const desc = document.querySelector('.weather .desc')
-
-        switch (json.weather[0].main) {
-            case 'Clear':
-                image.src = 'image/clear.png';
-                break;
-
-            case 'Rain':
-                image.src = 'image/rain.png';
-                break;
-
-            case 'Cloud':
-                image.src = 'image/cloud.png';
-                break;
-
-            case 'Mist':
-                image.src = 'image/mist.png';
-                break;
-
-            case 'Snow':
-                image.src = 'image/snow.png';
-                break;
-
-            default:
-                image.src = 'image/clear.png';
-        }
-
-    });
-
-**/
